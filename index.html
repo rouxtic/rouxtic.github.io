@@ -1,0 +1,561 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Send+Flowers&display=swap" rel="stylesheet">
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafeteria-Emprendimientos</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: url();
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+            background-attachment: local;
+            
+        }
+        nav {
+            background-color: transparent;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        nav img {
+            width: 100px;
+            height: auto;
+            cursor: pointer;
+            border-radius: 50px;
+            border: 1px solid black;
+
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .nav-links a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            cursor: pointer;
+            
+        }
+        .menu-mobile {
+            display: none;
+            flex-direction: column;
+            background-color: transparent;
+            position: relative;
+            left: 0;
+            width: 100%;
+            text-align: left;
+        }
+        .menu-mobile a {
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            border-bottom: 1px solid #555;
+            text-decoration: none;
+            justify-content: left;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .menu-mobile.active {
+                display: flex;
+            }
+        }
+        .page {
+            display: none;
+        }
+        .page img {
+            width: 375px;
+        }
+        .home-content img {
+            width: 150px;
+            text-align: center;
+            border-radius: 30px;
+        }
+        .active {
+            display: block;
+        }
+        .home-content ul {
+            text-align: center;
+            justify-content: center; 
+        }
+        .home-content h2 {
+            color: #000000;
+            
+        }
+        .home-content p {
+            color: #000000;
+            
+
+        }
+        .home-content img {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.style.display = 'none';
+            });
+            document.getElementById(pageId).style.display = 'block';
+        }
+        function toggleMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            showPage('inicio');
+        });
+    </script>
+</head>
+<body>
+    <nav>
+        <img src="p5.jpg" alt="Logo Rouxtic" onclick="showPage('inicio')">
+        <h1>Rouxtic</h1>
+        <div class="nav-links">
+            <a onclick="showPage('inicio')">Inicio</a>
+            <a onclick="showPage('menu')">Menú</a>
+            <a onclick="showPage('plato-del-dia')">Plato del Día</a>
+            <a onclick="showPage('horarios')">Horarios</a>
+            <a onclick="showPage('contacto')">Contacto</a>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+    <div id="mobile-menu" class="menu-mobile">
+        <a onclick="showPage('inicio'); toggleMenu()">Inicio</a>
+        <a onclick="showPage('menu'); toggleMenu()">Menú</a>
+        <a onclick="showPage('plato-del-dia'); toggleMenu()">Plato del Día</a>
+        <a onclick="showPage('horarios'); toggleMenu()">Horarios</a>
+        <a onclick="showPage('contacto'); toggleMenu()">Contacto</a>
+    </div>
+    
+    <div id="inicio" class="page">
+        <img src="cafe-desayuno.webp" alt="Bienvenida">
+
+        <h1></h1>
+        <div class="home-content">
+            <h2>Bienvenidos</h2>
+            <p>Descubre nuestra historia, nuestra pasión por la comida y el excelente servicio que ofrecemos.</p>
+            <h2>Nuestra Carta</h2>
+            <ul>
+
+                <img src="p46.jpg" alt="Logo Rouxtic" onclick="showPage('menu')">
+                <p>Fuertes</p>
+                <img src="p47.jpg" alt="Logo Rouxtic" onclick="showPage('menu')">
+                <p>Espafialidades</p>
+                <img src="p45.jpg" alt="Logo Rouxtic" onclick="showPage('menu')">
+                <p>Bebidas Frost</p>
+                <img src="n2.jpg" alt="Logo Rouxtic" onclick="showPage('menu')">
+                <p>Café & Té</p>
+                <img src="n3.jpg" alt="Logo Rouxtic" onclick="showPage('menu')">
+                <p>Postres</p>
+
+            </ul>
+
+        </div>
+    </div>
+    
+    <div id="menu" class="page">
+        <title>Carta de Cafetería</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        a{
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 36px;
+            color: #000000;
+            margin-top: 20px;
+            
+        }
+        h2 {
+            font-size: 28px;
+            color: #000000;
+            margin-top: 30px;
+        }
+        .menu-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .menu-category {
+            margin-bottom: 30px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        .menu-item h3 {
+            font-size: 20px;
+            color: #444;
+            margin: 0;
+        }
+        .menu-item p {
+            font-size: 16px;
+            color: #666;
+            margin: 5px 0;
+        }
+        .menu-item span {
+            font-size: 18px;
+            color: #660505;
+            font-weight: bold;
+        }
+        .menu-item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-left: 15px;
+        }
+        .daily-special img{
+            width: 200px;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Carta de Cafetería</h1>
+    <div class="menu-container">
+        <!-- Platos Principales -->
+        <div class="menu-category">
+            <h2>FUERTE</h2>
+            <div class="menu-item">
+                <img src="p13.webp" alt="Salteado de Res" class="menu-img">
+                <div>
+                    <h3>Salteado de Res</h3>
+                    <!-- <p>Delicioso salteado de res con verduras.</p> -->
+                </div>
+                <span>₡3400</span>
+            </div>
+            <div class="menu-item">
+                <img src="p16.webp" alt="Filet de Pescado al ajillo" class="menu-img">
+                <div>
+                    <h3>Filet de Pescado al ajillo</h3>
+                    <!-- <p>Filete de pescado al ajillo con guarnición.</p> -->
+                </div>
+                <span>₡3500</span>
+            </div>
+            <div class="menu-item">
+                <img src="p14.jpg" alt="Pollo a la Bechamel" class="menu-img">
+                <div>
+                    <h3>Pollo a la Bechamel</h3>
+                    <!-- <p>Pollo en salsa bechamel con arroz blanco.</p> -->
+                </div>
+                <span>₡3500</span>
+            </div>
+            <div class="menu-item">
+                <img src="p15.jpg" alt="Cerdo Agridulce" class="menu-img">
+                <div>
+                    <h3>Cerdo Agridulce</h3>
+                    <!-- <p>Cerdo en salsa agridulce con verduras salteadas.</p> -->
+                </div>
+                <span>₡3600</span>
+            </div>
+        </div>
+        <div class="menu-category">
+            <h3>Guarnición (Dos Opciones)</h3>
+            <div class="menu-item">
+                <img src="p17.jpg" alt="Cerdo Agridulce" class="menu-img">
+                <div>
+                    <h4>Papas al romero</h4>
+                    <!-- <p>sartén a fuego alto con el aceite de oliva</p> -->
+                </div>
+                <span>Incluido</span>
+            </div>
+            <div class="menu-item">
+                <img src="p18.jpg" alt="Cerdo Agridulce" class="menu-img">
+                <div>
+                    <h4>Verduras salteadas</h4>
+                    <!-- <p>Su presentacion</p> -->
+                </div>
+                <span>Incluido</span>
+            </div>
+            <div class="menu-item">
+                <img src="p19.webp" alt="Cerdo Agridulce" class="menu-img">
+                <div>
+                    <h4>Picadillo de Temporada</h4>
+                    <!-- <p>sartén a fuego alto con el aceite de oliva</p> -->
+                </div>
+                <span>Incluido</span>
+            </div>
+            <div class="menu-item">
+                <img src="p20.jpg" alt="Cerdo Agridulce" class="menu-img">
+                <div>
+                    <h4>Arroz Blanco</h4>
+                    <!-- <p>Su presentacion</p> -->
+                </div>
+                <span>Incluido</span>
+            </div>
+            <div class="menu-item">
+                <img src="p21.jpg" alt="Cerdo Agridulce" class="menu-img">
+                <div>
+                    <h4>Ensalada</h4>
+                    <!-- <p>Su presentacion</p> -->
+                </div>
+                <span>Incluido</span>
+            </div>
+        </div>
+        <!-- Especialidades -->
+         <div class="menu-category">
+            <h2>ESPECIALIDADES</h2>
+            <div class="menu-item">
+                <img src="p22.jpg" alt="Café Chorreado" class="menu-img">
+                <div>
+                    <h3>Pasta de camarones</h3>
+                    <!-- <p>Su presentacion</p> -->
+                </div>
+                <span>₡3800</span>
+            </div>
+            <div class="menu-item">
+                <img src="p23.jpg" alt="Café Chorreado" class="menu-img">
+                <div>
+                    <h3>Bati Smash Burger</h3>
+                    <!-- <p>Su presentacion</p> -->
+                </div>
+                <span>₡2500</span>
+            </div>
+            <div class="menu-item">
+                <img src="p24.webp" alt="Café Chorreado" class="menu-img">
+                <div>
+                    <h3>Ensalada Rouxtic</h3>
+                    <!-- <p>Su presentacion</p> -->
+                </div>
+                <span>₡2400</span>
+            </div>
+            <div class="menu-item">
+                <img src="p25.jpg" alt="Café Chorreado" class="menu-img">
+                <div>
+                    <h3>Nacho Supremo</h3>
+                    <!-- <p>Su presentacion</p> -->
+                </div>
+                <span>₡2600</span>
+            </div>
+            <div class="menu-item">
+                <img src="p26.jpg" alt="Café Chorreado" class="menu-img">
+                <div>
+                    <h3>Empanada Costarricense</h3>
+                    <!-- <p>Su presentacion</p> -->
+                </div>
+                <span>₡1000</span>
+            </div>
+            <div class="menu-item">
+                <img src="p27.jpg" alt="Café Chorreado" class="menu-img">
+                <div>
+                    <h3>Tortilla a Mano</h3>
+                    <!-- <p>Su presentacion</p> -->
+                </div>
+                <span>₡1200</span>
+            </div>
+            <div class="menu-item">
+                <img src="p28.webp" alt="Café Chorreado" class="menu-img">
+                <div>
+                    <h3>Crema de Ayote</h3>
+                    <!-- <p>Su presentacion</p> -->
+                </div>
+                <span>₡1500</span>
+            </div>
+            </DIv>
+         
+        <!-- Bebida Frost -->
+         <div class="menu-category">
+            <h2>BEBIDA FROST</h2>
+            <div class="menu-item">
+                <img src="p29.jpg" alt="Café Chorreado" class="menu-img">
+                <div>
+                    <h3>Sandia</h3>
+                    <!-- <p>Su presentacion</p> -->
+                </div>
+                <span>₡1400</span>
+            </div>
+            <div class="menu-item">
+                <img src="p30.webp" alt="Café Chorreado" class="menu-img">
+                <div>
+                    <h3>Melón</h3>
+                    <!-- <p>Su presentacion</p> -->
+                </div>
+                <span>₡1400</span>
+            </div>
+            <div class="menu-item">
+                <img src="p31.jpg" alt="Café Chorreado" class="menu-img">
+                <div>
+                    <h3>Piña</h3>
+                    <!-- <p>Su presentacion</p> -->
+                </div>
+                <span>₡1400</span>
+            </div>
+         </div>
+        <!-- Bebidas -->
+        <div class="menu-category">
+            <h2>CAFÉ & TÉ</h2>
+            <div class="menu-item">
+                <img src="p32.jpg" alt="Café Chorreado" class="menu-img">
+                <div>
+                    <h3>Café Chorreado</h3>
+                    <!-- <p>Café tradicional chorreado.</p> -->
+                </div>
+                <span>₡800</span>
+            </div>
+            <div class="menu-item">
+                <img src="p33.jpg" alt="Café en Prensa Francesa" class="menu-img">
+                <div>
+                    <h3>Café en Prensa Francesa</h3>
+                    <!-- <p>Café preparado en prensa francesa.</p> -->
+                </div>
+                <span>₡1000</span>
+            </div>
+            <div class="menu-item">
+                <img src="p34.webp" alt="Café Mocca" class="menu-img">
+                <div>
+                    <h3>Café Mocca</h3>
+                    <!-- <p>Café con chocolate y crema.</p> -->
+                </div>
+                <span>₡1200</span>
+            </div>
+            <div class="menu-item">
+                <img src="p35.jpg" alt="Café en Prensa Francesa" class="menu-img">
+                <div>
+                    <h3>Cappuc</h3>
+                    <!-- <p>Su presentacion</p> -->
+                </div>
+                <span>₡1000</span>
+            </div>
+            <div class="menu-item">
+                <img src="p36.jpg" alt="Café en Prensa Francesa" class="menu-img">
+                <div>
+                    <h3>Chocolate</h3>
+                    <!-- <p>Su presentacion</p> -->
+                </div>
+                <span>₡900</span>
+            </div>
+            <div class="menu-item">
+                <img src="p37.jpg" alt="Café en Prensa Francesa" class="menu-img">
+                <div>
+                    <h3>Agua dulce</h3>
+                    <!-- <p>Su presentacion</p> -->
+                </div>
+                <span>₡750</span>
+            </div>
+            <div class="menu-item">
+                <img src="p38.jpg" alt="Café Mocca" class="menu-img">
+                <div>
+                    <h3>Massala Chai</h3>
+                    <!-- <p>Su presentacion</p> -->
+                </div>
+                <span>₡1600</span>
+            </div>
+            <div class="menu-item">
+                <img src="p39.webp" alt="Té Negro con Limón" class="menu-img">
+                <div>
+                    <h3>Té Negro con Limón</h3>
+                    <!-- <p>Té negro refrescante con limón.</p> -->
+                </div>
+                <span>₡800</span>
+            </div>
+            <div class="menu-item">
+                <img src="p40.jpg" alt="Café Mocca" class="menu-img">
+                <div>
+                    <h3>Infuciones</h3>
+                    <!-- <p>Su presentacion</p> -->
+                </div>
+                <span>₡750</span>
+            </div>
+        </div>
+
+        <!-- Postres -->
+        <div class="menu-category">
+            <h2>Postres</h2>
+            <div class="menu-item">
+                <img src="p41.jpg" alt="CheeseCake" class="menu-img">
+                <div>
+                    <h3>CheeseCake</h3>
+                    <!-- <p>Delicioso cheesecake casero.</p> -->
+                </div>
+                <span>₡3000</span>
+            </div>
+            <div class="menu-item">
+                <img src="p42.jpg" alt="Crepés Suzette Naranja" class="menu-img">
+                <div>
+                    <h3>Crepés Suzette Naranja</h3>
+                    <!-- <p>Crepés con salsa de naranja.</p> -->
+                </div>
+                <span>₡2800</span>
+            </div>
+            <div class="menu-item">
+                <img src="p43.jpg" alt="Mousse de Queso" class="menu-img">
+                <div>
+                    <h3>Mousse de Queso</h3>
+                    <!-- <p>Mousse suave de queso.</p> -->
+                </div>
+                <span>₡2500</span>
+            </div>
+            <div class="menu-item">
+                <img src="p44.jpg" alt="Tiramisú" class="menu-img">
+                <div>
+                    <h3>Tiramisú</h3>
+                    <!-- <p>Clásico tiramisú italiano.</p> -->
+                </div>
+                <span>₡2800</span>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    
+    <div id="plato-del-dia" class="page">
+        <h1>Platos del Día</h1>
+        <div class="daily-special">
+            <img src="p4.jpg" alt="Plato del Día">
+            <h2>Ensalda</h2>
+        </div>
+    </div>
+    
+    <div id="horarios" class="page">
+        <h1>Horarios</h1>
+        <p>Lunes a Sabado: 9:00 AM - 6:00 PM</p>
+        <p>Domingos: Cerrado</p>
+    </div>
+    
+    <div id="contacto" class="page">
+        <h1>Contacto</h1>
+        <p>Teléfono: +506 6465 5543</p>
+        <p>Ubicados 40 metros Norte de la Terminal de Tracopa, San Vito de Coto Brus</p>
+        <a href="https://www.instagram.com/rouxtic.cr?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+    </div>
+</body>
+</html>
